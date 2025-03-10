@@ -9,7 +9,7 @@ author: https://github.com/LitBomb
 **A:** MeshCore is free and open source
 * MeshCore is the routing and firmware etc, available on GitHub under MIT license
 * There are clients made by the community, such as the web clients, these are free to use, and some are open source too
-* The cross platform mobile app developed by [Liam Cottle](https://liamcottle.net) for Android/iOS/PC etc is free to download and use
+* The cross platform mobile app developed by [Liam Cottle](https://liamcottle.net) for Android, iOS, iPadOS, Mac, and PC is free to download and use
 * The T-Deck firmware is developed by Scott at Ripple Radios, the creator of MeshCore, is also free to flash on your devices and use
 
 
@@ -33,16 +33,16 @@ Anyone is able to build anything they like on top of MeshCore without paying any
 ### Hardware
 To use MeshCore without using a phone as the client interface, you can run MeshCore on a T-Deck or T-Deck Plus. It is a complete off-grid secure communication solution.  
 
-MeshCore is also available on a variety of 868MHz and 915MHz LoRa devices. For example, RAK4631 devices (19003, 19007, 19026), Heltec V3, Xiao S3 WIO, Xiao C3, Heltec T114, Station G2, Seeed Studio T1000-E. More devices will be supported later.
+MeshCore is also available on a variety of 868  and 915  LoRa devices. For example, RAK4631 devices (19003, 19007, 19026), Heltec V3, Xiao S3 WIO, Xiao C3, Heltec T114, Station G2, Seeed Studio T1000-E. More devices will be supported later.
 
 ### Firmware
 MeshCore has four firmware types that are not available on other LoRa systems. MeshCore has the following:
 
 #### Companion Radio Firmware
-Companion radios are for connecting to the Android app or web app as a messenger client. There are two different companion radio firmware versions:
+Companion radios are for connecting to the Android, iOS, iPadOS, Mac and PC apps or a web app as a messenger client. There are two different companion radio firmware versions:
 
 1. **BLE Companion**  
-   BLE Companion firmware runs on a supported LoRa device and connects to a smart device running the Android MeshCore client over BLE (iOS MeshCore client will be available soon)  
+   BLE Companion firmware runs on a supported LoRa device and connects to a smart device running the MeshCore client app over BLE
    <https://meshcore.co.uk/apps.html>
 
 2. **USB Serial Companion**  
@@ -51,14 +51,14 @@ Companion radios are for connecting to the Android app or web app as a messenger
    <https://client.meshcore.co.uk/tabs/devices>
 
 #### Repeater
-Repeaters are used to extend the range of a MeshCore network. Repeater firmware runs on the same devices that run client firmware. A repeater's job is to forward MeshCore packets to the destination device. It does **not** forward or retransmit every packet it receives, unlike other LoRa mesh systems.  
+Repeaters are used to extend the range of a MeshCore network. Repeater firmware runs on the same devices that run client firmware. A repeater's job is to forward MeshCore packets to the destination device. It does **not** forward or retransmit every packet it receives, unlike other LoRa mesh networks.  
 
 A repeater can be remotely administered using a T-Deck running the MeshCore firwmware with remote admistration features unlocked, or from a BLE Companion client connected to a smartphone running the MeshCore app.
 
 #### Room Server
 A room server is a simple BBS server for sharing posts. T-Deck devices running MeshCore firmware or a BLE Companion client connected to a smartphone running the MeshCore app can connect to a room server. 
 
-room servers store message history on them, and push the stored messages to users.  Room servers allow roaming users to come back later and retrieve message history.  Contrast to channels, messages are either received  when it's sent, or not received and missed if the a room user is out of range.  You can think  of room servers like email servers where you can come back later and get your emails from your mail server 
+Room servers store message history on them, and push the stored messages to users.  Room servers allow roaming users to come back later and retrieve message history.  Contrast to channels, messages are either received  when it's sent, or not received and missed if the a room user is out of range.  You can think  of room servers like email servers where you can come back later and get your emails from your mail server 
 
 A room server can be remotely administered using a T-Deck running the MeshCore firwmware with remote admistration features unlocked, or from a BLE Companion client connected to a smartphone running the MeshCore app.  
 
@@ -66,14 +66,14 @@ When a client logs into a room server, the client will receive the previously 16
 
 A room server can also take on the repeater role.  To enable repeater role on a room server, use this command:
 
-`set repeat {on|off}`
+`set repeat on`
 
 ---
 
 ## Initial Setup
 
 ### Q: How many devices do I need to start using meshcore?
-**A:** If you have one supported device, flash the BLE Companion firmware and use your device as a client.  You can connect to the device using the Android client via bluetooth (iOS client will be available later).  You can start communiating with other MeshCore users near you.
+**A:** If you have one supported device, flash the BLE Companion firmware and use your device as a client.  You can connect to the device using the Android, iOS, iPadOS, Mac, or PC client via bluetooth.  Once your app is connected to a Companion radio, you can start chatting with other MeshCore users near you.
 
 If you have two supported devices, and there are not many MeshCore users near you, flash both of them to BLE Companion firmware so you can use your devices to communiate with your near-by friends and family.
 
@@ -91,11 +91,11 @@ The T-Deck firmware is free to download and most features are available without 
 
 
 ### Q: What frequencies are supported by MeshCore?
-**A:** It supports the 868MHz range in the UK/EU and the 915MHz range in New Zealand, Australia, and the USA. Countries and regions in these two frequency ranges are also supported. The firmware and client allow users to set their preferred frequency.  
-- Australia and New Zealand are using **915.8MHz**
-- UK and EU are gravitating toward **867.5MHz**
-- There are discussions on discord for UK to move to 869.525MHz (https://discord.com/channels/826570251612323860/1330643963501351004/1342554454498742374)
-- USA is gravitating toward **910.525MHz**
+**A:** It supports the 868 MHz range in the UK/EU and the 915 MHz range in New Zealand, Australia, and the USA. Countries and regions in these two frequency ranges are also supported. The firmware and client allow users to set their preferred frequency.  
+- Australia and New Zealand are using **915.8 MHz**
+- UK and EU are gravitating toward **867.500 MHz**
+- There are discussions on discord for UK to move to 869.525  (https://discord.com/channels/826570251612323860/1330643963501351004/1342554454498742374)
+- USA is gravitating toward **910.525 **
 
 the rest of the radio settings are the same for all frequencies:  
 - Spread Factor (SF): 10  
@@ -104,16 +104,18 @@ the rest of the radio settings are the same for all frequencies:
 
 ### Q: What is an "advert" in MeshCore?
 **A:** 
-Advert means to advertise yourself on the network. In Reticulum terms it would be to announce. In Meshtastic terms it would be the node sending it's node info.
+Advert means to advertise yourself on the network. In Reticulum terms, it would be to announce. In Meshtastic terms, it would be the node sending it's node info.
 
 MeshCore allows you to manually broadcast your name, position and public encryption key, which is also signed to prevent spoofing.  When you click the advert button, it broadcasts that data over LoRa.  MeshCore calls that an Advert. There's two ways to advert, "zero hop" and "flood".
 
 * Zero hop means your advert is broadcasted out to anyone that can hear it, and that's it.
 * Flooded means it's broadcasted out, and then repeated by all the repeaters that hear it.
 
-MeshCore clients only advertise themselves when the user initiates it. A repeater (and room server?) advertises its presence once every 240 minutes. This interval can be configured using the following command:
+MeshCore clients only advertise themselves when the user initiates it. A repeater and Room Server advertises its presence once every 240 minutes. This interval can be configured using the following command:
 
 `set advert.interval {minutes}`
+
+The minimum interaval a Repeater and Room Server can be set to automatically advert is 60 minutes.
 
 ### Q: Is there a hop limit?
 
